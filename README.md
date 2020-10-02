@@ -13,6 +13,8 @@ Projeto destinado à disciplina de Teste de Software, lencionada pelo professor 
 - **tests-output:** arquivos com registros dos outputs dos testes.
 - **img:** imagens e prints do experimento.
 - - **grapviz:** grafos dos testes gerados em '.svg' com a ferramenta graphviz.
+- - **prints:** prints tirados do experimento em execução, código e testes.
+- - **draws:** imagens dos desenhos realizados sobre o grafo e análise de complexidade ciclomática.
 
 ### Execução do código
 
