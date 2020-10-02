@@ -1,0 +1,14 @@
+(pprof) top10
+Showing nodes accounting for 1840ms, 92.00% of 2000ms total
+Showing top 10 nodes out of 81
+      flat  flat%   sum%        cum   cum%
+     810ms 40.50% 40.50%     1040ms 52.00%  runtime.mallocgc
+     420ms 21.00% 61.50%     1550ms 77.50%  testing-golang-assignment/pkg.Intersection
+     160ms  8.00% 69.50%      160ms  8.00%  runtime.madvise
+     160ms  8.00% 77.50%     1710ms 85.50%  testing-golang-assignment/pkg.BenchmarkIntersection
+      80ms  4.00% 81.50%     1120ms 56.00%  runtime.newobject
+      60ms  3.00% 84.50%       60ms  3.00%  runtime.releasem (inline)
+      50ms  2.50% 87.00%       50ms  2.50%  runtime.acquirem (inline)
+      40ms  2.00% 89.00%       40ms  2.00%  runtime.kevent
+      30ms  1.50% 90.50%       30ms  1.50%  runtime.memclrNoHeapPointers
+      30ms  1.50% 92.00%       30ms  1.50%  runtime.nextFreeFast (inline)

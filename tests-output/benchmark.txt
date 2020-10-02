@@ -1,0 +1,18 @@
+-> Int results: TestResultInt()
+Tests done: 6 
+
+-> Negative 'n' or 'm': TestNegativeErrorNM()
+Tests done: 4 
+
+-> Negative int inside vector: TestNegativeErrorVx()
+Tests done: 4 
+
+-> Results made with '0/int' operation: TestZeroDivision() 2
+Tests done: 2 
+
+goos: darwin
+goarch: amd64
+pkg: testing-golang-assignment/pkg
+BenchmarkIntersection-8         95017690                12.4 ns/op
+PASS
+ok      testing-golang-assignment/pkg   1.226s

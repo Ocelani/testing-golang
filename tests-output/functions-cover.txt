@@ -1,0 +1,8 @@
+testing-golang-assignment/pkg/main.go:13:	Error		100.0%
+testing-golang-assignment/pkg/main.go:19:	Intersection	100.0%
+testing-golang-assignment/pkg/main.go:50:	CreateVector	0.0%
+testing-golang-assignment/pkg/main.go:60:	run		0.0%
+testing-golang-assignment/pkg/main.go:83:	printVars	0.0%
+testing-golang-assignment/pkg/main.go:91:	printResult	0.0%
+testing-golang-assignment/pkg/main.go:98:	main		0.0%
+total:						(statements)	37.5%
