@@ -1,0 +1,121 @@
+$ go test -v ./pkg
+
+=== RUN   TestResultInt
+    main_test.go:180:
+        PASSED!
+        ☐ Intersection()
+          {4 6 [1 3 2 6] [7 0 9 4 3 1]}
+        - Expected: 2
+        ✔ Got: 2
+    main_test.go:180:
+        PASSED!
+        ☐ Intersection()
+          {4 6 [19 5 2 6] [5 0 9 4 18 56]}
+        - Expected: 5
+        ✔ Got: 5
+    main_test.go:180:
+        PASSED!
+        ☐ Intersection()
+          {2 4 [2 4] [2 3 4 5]}
+        - Expected: 3
+        ✔ Got: 3
+    main_test.go:180:
+        PASSED!
+        ☐ Intersection()
+          {0 4 [] [2 3 4 5]}
+        - Expected: 0
+        ✔ Got: 0
+    main_test.go:180:
+        PASSED!
+        ☐ Intersection()
+          {2 0 [2 4] []}
+        - Expected: 0
+        ✔ Got: 0
+    main_test.go:180:
+        PASSED!
+        ☐ Intersection()
+          {4 4 [1 7 8 9] [2 3 4 5]}
+        - Expected: 0
+        ✔ Got: 0
+
+-> Int results: TestResultInt()
+Tests done: 6
+--- PASS: TestResultInt (0.00s)
+=== RUN   TestNegativeErrorNM
+    main_test.go:172:
+        PASSED!
+        ☐ Intersection()
+          {-1 4 [] [2 3 4 5]}
+        - Expected: an error,
+        ✔ Got: an error 'true'
+    main_test.go:172:
+        PASSED!
+        ☐ Intersection()
+          {-2 4 [3 4] [2 3 4 5]}
+        - Expected: an error,
+        ✔ Got: an error 'true'
+    main_test.go:172:
+        PASSED!
+        ☐ Intersection()
+          {-1 -2 [] []}
+        - Expected: an error,
+        ✔ Got: an error 'true'
+    main_test.go:172:
+        PASSED!
+        ☐ Intersection()
+          {-3 -2 [3 4 8] [2 3]}
+        - Expected: an error,
+        ✔ Got: an error 'true'
+
+-> Negative 'n' or 'm': TestNegativeErrorNM()
+Tests done: 4
+--- PASS: TestNegativeErrorNM (0.00s)
+=== RUN   TestNegativeErrorVx
+    main_test.go:172:
+        PASSED!
+        ☐ Intersection()
+          {1 4 [2] [2 3 -4 5]}
+        - Expected: an error,
+        ✔ Got: an error 'true'
+    main_test.go:172:
+        PASSED!
+        ☐ Intersection()
+          {2 4 [-3 4] [2 -3 4 5]}
+        - Expected: an error,
+        ✔ Got: an error 'true'
+    main_test.go:172:
+        PASSED!
+        ☐ Intersection()
+          {4 2 [4 2 0 -1] [3 -1]}
+        - Expected: an error,
+        ✔ Got: an error 'true'
+    main_test.go:172:
+        PASSED!
+        ☐ Intersection()
+          {8 9 [3 4 8 9 7 2 6 -1] [1 2 3 4 5 6 7 8 9]}
+        - Expected: an error,
+        ✔ Got: an error 'true'
+
+-> Negative int inside vector: TestNegativeErrorVx()
+Tests done: 4
+--- PASS: TestNegativeErrorVx (0.00s)
+=== RUN   TestZeroDivision
+    main_test.go:180:
+        PASSED!
+        ☐ Intersection()
+          {2 4 [2 0] [4 3 0 5]}
+        - Expected: 0
+        ✔ Got: 0
+    main_test.go:180:
+        PASSED!
+        ☐ Intersection()
+          {5 4 [3 4 8 1 0] [6 2 7 0]}
+        - Expected: 0
+        ✔ Got: 0
+
+-> Results made with '0/int' operation: TestZeroDivision() 2
+Tests done: 2
+
+--- PASS: TestZeroDivision (0.00s)
+PASS
+ok      testing-golang-assignment/pkg   0.727s
