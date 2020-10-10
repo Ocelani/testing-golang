@@ -149,15 +149,58 @@ func TestZeroDivision(t *testing.T) {
 	fmt.Println()
 }
 
-func BenchmarkIntersection(b *testing.B) {
-  m := 4
-  n := 6
-  v1 :=  []int{3,2,1}
-  v2 :=  []int{9,8,0,2,1}
-  
-  for i := 0; i < b.N; i++ {
-      Intersection(m, n, v1, v2)
+func TestDifferentLengthError(t *testing.T) {
+	var m = []TestItem{
+		{
+			Args{
+				5, 4, []int{2, 0}, []int{4, 3, 0, 5},
+			},
+			-1, true,
+		}, {
+			Args{
+				2, 4, []int{3, 4, 8, 1, 0}, []int{6, 2, 7, 0},
+			},
+			-1, true,
+		}, {
+			Args{
+				2, 7, []int{2, 0}, []int{4, 3, 0, 5},
+			},
+			-1, true,
+		}, {
+			Args{
+				2, 2, []int{2, 0}, []int{4, 3, 0, 5},
+			},
+			-1, true,
+		}, {
+			Args{
+				5, 8, []int{2, 0}, []int{4, 3, 0, 5},
+			},
+			-1, true,
+		}, {
+			Args{
+				2, 3, []int{3, 4, 8, 1, 0}, []int{6, 2, 7, 0},
+			},
+			-1, true,
+		},
   }
+  
+	for _, i := range m {
+		testExecute(i, t)
+	}
+	fmt.Println("\n-> Results made with '0/int' operation: TestZeroDivision()", len(m))
+	fmt.Printf("Tests done: %v \n", len(m))
+	fmt.Println()
+}
+
+func BenchmarkIntersection(b *testing.B) {
+	m := 4
+	n := 6
+	v1 := []int{3, 2, 1}
+	v2 := []int{9, 8, 0, 2, 1}
+
+	for i := 0; i < b.N; i++ {
+		Intersection(m, n, v1, v2)
+	}
 }
 
 func testExecute(item TestItem, t *testing.T) {
