@@ -16,20 +16,14 @@ log() {
   echo -e "\n[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@\n"
 }
 
-log "yarn prebuild..."
-yarn prebuild
+log "Golang is making unit testing ..."
+gotest ./pkg -v
 if [ $? -ne 0 ]; then
-    err "Error while yarn prebuild ..."
+    err "Error while unit testing ..."
 fi
 
-log "yarn build..."
-yarn build
+log "Golang is making mutation testing ..."
+go-mutesting ./pkg/main.go example/ github.com/zimmski/go-mutesting/mutator/...
 if [ $? -ne 0 ]; then
-    err "Error while yarn build ..."
-fi
-
-log "Starting Node production enviroment with yarn start:prod"
-yarn start:prod
-if [ $? -ne 0 ]; then
-    err "Error while yarn start:prod ..."
+    err "Error while mutation testing ..."
 fi
